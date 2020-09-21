@@ -80,4 +80,5 @@ if [ "$CLEAN" = "yes" ]; then
 	$IPTABLES -t nat -F $CHAIN-POSTROUTING
 fi
 
-miniupnpd "$@"
+minissdpd -i $MINISSDPD_IF -d &
+miniupnpd -f /config/miniupnpd.conf -d
